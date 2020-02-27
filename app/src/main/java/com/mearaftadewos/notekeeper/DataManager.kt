@@ -1,13 +1,17 @@
 package com.mearaftadewos.notekeeper
 
+import android.util.Log
+
 object DataManager {
     val courses = HashMap<String, CourseInfo>()
     val notes = ArrayList<NoteInfo>()
 
     init {
-        // take no parameters but can access the parameters of the functions created in this class
+        // takes no parameters but can access the parameters of the functions created in this class
         initCourses()
         initNotes()
+        val size = notes.size
+        Log.i("Size of notes array: ", size.toString(), null )
     }
 
     // functions to initialise the courses and notes data
@@ -33,5 +37,23 @@ object DataManager {
         notes.add(note)
         note = NoteInfo(CourseInfo("Room DB for Android", "Database in Android Apps") , "Room Database in Android Apps","Room DM Library is nearly perfect for Android app" )
         notes.add(note)
+        note = NoteInfo(CourseInfo("Android", "Fragments In Android") , "Android Programming with Fragments","Single Activity Apps are good" )
+        notes.add(note)
+        note = NoteInfo(CourseInfo("Android with kotlin", "Coll parts of Kotlin") , "Kotlin is simple","Kotlin is elegant and typed lang" )
+        notes.add(note)
+        note = NoteInfo(CourseInfo("Single Activity Android Apps ", "Single Activity") , "Single Activity App with Fragments","Single Activity Apps are cool,use one Activity as an entry point." )
+        notes.add(note)
+        note = NoteInfo(CourseInfo("Room DB for Android", "Database in Android Apps") , "Room Database in Android Apps","Room DM Library is nearly perfect for Android app" )
+        notes.add(note)
+        note = NoteInfo(CourseInfo("Android", "Fragments In Android") , "Android Programming with Fragments","Single Activity Apps are good" )
+        notes.add(note)
+        note = NoteInfo(CourseInfo("Android with kotlin", "Coll parts of Kotlin") , "Kotlin is simple","Kotlin is elegant and typed lang" )
+        notes.add(note)
+        note = NoteInfo(CourseInfo("Single Activity Android Apps ", "Single Activity") , "Single Activity App with Fragments","Single Activity Apps are cool,use one Activity as an entry point." )
+        notes.add(note)
+        note = NoteInfo(CourseInfo("Room DB for Android", "Database in Android Apps") , "Room Database in Android Apps","Room DM Library is nearly perfect for Android app" )
+        notes.add(note)
+
+
     }
 }
