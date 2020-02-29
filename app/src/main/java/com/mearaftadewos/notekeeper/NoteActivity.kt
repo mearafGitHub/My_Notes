@@ -26,17 +26,16 @@ class MainActivity : AppCompatActivity() {
 
         // take the data from the extra sent from previous activity, Position_Not_Set to
         // receive the position when item is selected
-        notePosition =  savedInstanceState?.getInt(Note_position, notePosition)?:
-            intent.getIntExtra(Note_position, Position_Not_Set)
-        //Position_Not_Set is not equal to default value, then an item is selected and its position is sent
+        notePosition =  savedInstanceState?.getInt(Note_position, notePosition)?: // get data from saveInstance if any
+            intent.getIntExtra(Note_position, Position_Not_Set) // else get data from intent
+        // notePosition is not equal to -1(Position_Not_Set), means an item is selected and its position is sent
         if(notePosition != Position_Not_Set)
             displayNote()
         else {
             // if no note then add empty note and set notePosition
-            DataManager.notes.add(NoteInfo()) // creates NoteIfo object with is primary constructor's properties default values
+            DataManager.notes.add(NoteInfo()) // creates Empty NoteInfo object(has nullable parameters)
             notePosition = DataManager.notes.lastIndex
         }
-
     }
 
     private fun displayNote() {
